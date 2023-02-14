@@ -1,2 +1,5 @@
 <!--pages/ticket/index.wxml-->
-<text>pages/ticket/index.wxml</text>
+<view class="container">
+    <text>pages/ticket/index.wxml</text>
+</view>
+

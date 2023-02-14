@@ -36,7 +36,7 @@
     },
     "window": {
         "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#0f0",
+        "navigationBarBackgroundColor": "#00f",
         "navigationBarTitleText": "水立坊订水",
         "navigationBarTextStyle": "white"
     },
