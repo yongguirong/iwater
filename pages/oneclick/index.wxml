@@ -1,0 +1,3 @@
+<!--pages/oneclick/index.wxml-->
+<text>pages/oneclick/index.wxml</text>
+<van-button type="primary">按钮</van-button>

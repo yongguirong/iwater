@@ -1,0 +1,48 @@
+{
+    "pages": [
+        "pages/oneclick/index",
+        "pages/ticket/index",
+        "pages/order/index",
+        "pages/my/index"
+
+    ],
+    "tabBar": {
+        "list": [
+            {
+            "pagePath": "pages/oneclick/index",
+            "text": "一键订水",
+            "iconPath": "/images/buy_blue.png",
+            "selectedIconPath": "/images/buy_red.png"
+            },
+            {
+            "pagePath": "pages/ticket/index",
+            "text": "水票",
+            "iconPath": "/images/ticket_blue.png",
+            "selectedIconPath": "/images/ticket_red.png"
+            },
+            {
+            "pagePath": "pages/order/index",
+            "text": "订单",
+            "iconPath": "/images/order_blue.png",
+            "selectedIconPath": "/images/order_red.png"
+            },
+            {
+                "pagePath": "pages/my/index",
+                "text": "我的",
+                "iconPath": "/images/user_blue.png",
+                "selectedIconPath": "/images/user_red.png"
+            }
+        ]
+    },
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "水立坊订水",
+        "navigationBarTextStyle": "black"
+    },
+    "usingComponents": {
+        "van-button": "@vant/weapp/button/index"
+    },
+    
+    "sitemapLocation": "sitemap.json"
+}
