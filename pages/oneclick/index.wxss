@@ -1,1 +1,11 @@
 /* pages/oneclick/index.wxss */
+.mainbox{
+    width: 580rpx;
+    padding: 100rpx 50rpx;
+    background-color: #fff;
+    border-radius: 20rpx;
+    display: flex;
+    flex-direction: column;
+    color: cadetblue;
+
+}

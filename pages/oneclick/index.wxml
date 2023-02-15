@@ -1,6 +1,37 @@
 <!--pages/oneclick/index.wxml-->
 <view class="container">
-    <text>pages/oneclick/index.wxml</text>
-    <van-button type="primary">按钮</van-button>
+    <view class="mainbox" >
+        <van-icon name="clock-o" size="30"/>
+        <van-cell title="请选择配送日期：{{CDate}}" is-link bind:click="showPopupDate" />
+        <van-cell title="请选择配送时间：{{CTime}}" is-link bind:click="showPopupTime" />
+        <view>
+            some bottom text
+        </view>
 
+    </view>
 </view>
+
+<van-popup
+    show="{{ showtime }}"
+    round
+    position="bottom"
+    custom-style="height: 30%"
+>
+    <van-datetime-picker
+            type="time"
+            min-hour="7"
+            max-hour="21"
+            bind:close="onClose"
+            bind:input="onInputtime"
+    />
+</van-popup>
+<van-popup
+    show="{{ showdate }}"
+    round
+    position="bottom"
+    custom-style="height: 30%"
+>
+    <van-calendar show="{{ showdate }}" bind:close="onClose" bind:confirm="onInputdate" />
+</van-popup>
+
+

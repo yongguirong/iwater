@@ -1,12 +1,41 @@
 // pages/oneclick/index.js
 Page({
-
-    /**
-     * 页面的初始数据
-     */
     data: {
+        showtime: false,
+        showdate:false,
+        
+        CDate: '',
+        CTime: ''
+
 
     },
+    
+    showPopupDate(){
+        this.setData({ showdate: true });
+    },
+    showPopupTime(){
+        this.setData({ showtime: true });
+    },  
+    onClose() {
+        this.setData({ showdate: false, showtime:false });
+    },
+    formatDate(date) {
+        date = new Date(date);
+        return `${date.getMonth() + 1}/${date.getDate()}`;
+      },
+      onInputdate(event) {
+        this.setData({
+          showdate: false,
+          CDate: this.formatDate(event.detail),
+        });
+      },
+    onInputtime(event) {
+        this.setData({
+          showtime:false,
+          CTime: event.detail,
+        });
+    },
+    /**
 
     /**
      * 生命周期函数--监听页面加载

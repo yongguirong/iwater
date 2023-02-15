@@ -4,7 +4,6 @@
         "pages/ticket/index",
         "pages/order/index",
         "pages/my/index"
-
     ],
     "tabBar": {
         "list": [
@@ -36,11 +35,15 @@
     },
     "window": {
         "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#00f",
+        "navigationBarBackgroundColor": "#2B7DC8",
         "navigationBarTitleText": "水立坊订水",
         "navigationBarTextStyle": "white"
     },
     "usingComponents": {
+        "van-icon": "@vant/weapp/icon/index",
+        "van-popup": "@vant/weapp/popup/index",
+        "van-cell": "@vant/weapp/cell/index",
+        "van-cell-group": "@vant/weapp/cell-group/index",
         "van-button": "@vant/weapp/button/index"
     },
     
