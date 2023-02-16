@@ -3,27 +3,28 @@
         "pages/oneclick/index",
         "pages/ticket/index",
         "pages/order/index",
-        "pages/my/index"
+        "pages/my/index",
+        "pages/goods/index"
     ],
     "tabBar": {
         "list": [
             {
-            "pagePath": "pages/oneclick/index",
-            "text": "一键订水",
-            "iconPath": "/images/buy_blue.png",
-            "selectedIconPath": "/images/buy_red.png"
+                "pagePath": "pages/oneclick/index",
+                "text": "一键订水",
+                "iconPath": "/images/buy_blue.png",
+                "selectedIconPath": "/images/buy_red.png"
             },
             {
-            "pagePath": "pages/ticket/index",
-            "text": "水票",
-            "iconPath": "/images/ticket_blue.png",
-            "selectedIconPath": "/images/ticket_red.png"
+                "pagePath": "pages/ticket/index",
+                "text": "水票",
+                "iconPath": "/images/ticket_blue.png",
+                "selectedIconPath": "/images/ticket_red.png"
             },
             {
-            "pagePath": "pages/order/index",
-            "text": "订单",
-            "iconPath": "/images/order_blue.png",
-            "selectedIconPath": "/images/order_red.png"
+                "pagePath": "pages/order/index",
+                "text": "订单",
+                "iconPath": "/images/order_blue.png",
+                "selectedIconPath": "/images/order_red.png"
             },
             {
                 "pagePath": "pages/my/index",
@@ -44,8 +45,8 @@
         "van-popup": "@vant/weapp/popup/index",
         "van-cell": "@vant/weapp/cell/index",
         "van-cell-group": "@vant/weapp/cell-group/index",
-        "van-button": "@vant/weapp/button/index"
+        "van-button": "@vant/weapp/button/index",
+        "van-field": "@vant/weapp/field/index"
     },
-    
     "sitemapLocation": "sitemap.json"
 }

@@ -9,3 +9,6 @@
     color: cadetblue;
 
 }
+.notice-text{
+    font-weight: bold;
+}

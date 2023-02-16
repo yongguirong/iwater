@@ -5,8 +5,11 @@ Page({
         showdate:false,
         
         CDate: '',
-        CTime: ''
+        CTime: '',
 
+        bzvalue:'',
+        zfinfo:'',
+        hongbao:5
 
     },
     
@@ -35,6 +38,11 @@ Page({
           CTime: event.detail,
         });
     },
+    bzonChange(event) {
+        // event.detail 为当前输入的值
+        this.setData({bzvalue:event.detail});
+        console.log(event.detail);
+      },
     /**
 
     /**
@@ -55,7 +63,17 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow() {
-
+        try {
+            var value = wx.getStorageSync('goods')
+            if (value) {
+              // Do something with return value
+              this.setData({
+                  zfinfo:value
+              })
+            }
+          } catch (e) {
+            // Do something when catch error
+          };
     },
 
     /**
