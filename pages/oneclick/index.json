@@ -1,7 +1,5 @@
 {
     "usingComponents": {
-        "van-datetime-picker": "@vant/weapp/datetime-picker/index",
-        "van-calendar": "@vant/weapp/calendar/index"
     },
     "navigationBarTitleText": "一键订水"
     

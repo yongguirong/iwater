@@ -5,9 +5,21 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        goods:[
+            {id:'0',title:'商品1',price:5.0,num:0,imageURL:'https://img01.yzcdn.cn/vant/ipad.jpeg'},
+            {id:'1',title:'商品2',price:15.0,num:0,imageURL:'https://img01.yzcdn.cn/vant/ipad.jpeg'}
+        ]
+        
     },
-    confirm:function(){
+    //数量改变
+    numCut(e){
+        console.log(e.detail.value)
+    },
+    numAdd(e){
+        console.log(e.detail.value)
+    },
+    //确定 商品
+    onSubmit(){
         try {
             wx.setStorageSync('goods', 'one for 12.00')
           } catch (e) { };

@@ -1,47 +1,24 @@
 <!--pages/oneclick/index.wxml-->
 <view class="container">
     <view class="mainbox" >
-        <van-icon name="clock-o" size="30"/>
-        <van-cell title="请选择配送日期：{{CDate}}" is-link bind:click="showPopupDate" />
-        <van-cell title="请选择配送时间：{{CTime}}" is-link bind:click="showPopupTime" />
+        <view style="flex-direction: row;">
+            <van-icon name="clock-o" size="30"/>
+            <picker mode="multiSelector" bindchange="bindMultiPickerChange"  value="{{multiIndex}}" range="{{multiArray}}">
+                <view class="picker">
+                选择配送时间：{{multiArray[0][multiIndex[0]]}}{{multiArray[1][multiIndex[1]]}}
+                </view>
+            </picker>
+        </view>
+
         <van-cell title="地址" is-link value="内容" />
         <van-cell title="商品" is-link value="{{zfinfo}}" link-type="navigateTo"
   url="/pages/goods/index"/>
         <van-cell-group>
-            <van-field  value="{{ bzvalue }}" label="备注" placeholder="如有特殊需要在此填写" border="{{ false }} "bind:change="bzChange" />
+            <van-field  value="{{ bzvalue }}" label="备注" placeholder="如有特殊需要在此填写" border="{{ false }} "bind:change="bzonChange" />
         </van-cell-group>
         <van-button round size="large" type="info">{{zfinfo}}</van-button>
-        <van-button round type="danger" wx:if="{{hongbo>0}}">使用红包</van-button>
+        <van-button round size="large" type="danger" wx:if="{{hongbao>0}}" bindtap="useHongbao">使用红包</van-button>
     </view>
     <view class="notice-text">        放假通知:  01月21日-01月27日，放假期间不送水  </view>
     <view>政企订水点下方水票：0558-5587791</view>
 </view>
-
-
-
-
-
-<van-popup
-    show="{{ showtime }}"
-    round
-    position="bottom"
-    custom-style="height: 30%"
->
-    <van-datetime-picker
-            type="time"
-            min-hour="7"
-            max-hour="21"
-            bind:close="onClose"
-            bind:confirm="onInputtime"
-    />
-</van-popup>
-<van-popup
-    show="{{ showdate }}"
-    round
-    position="bottom"
-    custom-style="height: 30%"
->
-    <van-calendar show="{{ showdate }}" bind:close="onClose" bind:confirm="onInputdate" />
-</van-popup>
-
-

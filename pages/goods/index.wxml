@@ -1,3 +1,23 @@
 <!--pages/goods/index.wxml-->
-<text>pages/goods/index.wxml</text>
-<button bindtap="confirm">commit</button>
+
+<view wx:for="{{goods}}" wx:key="index">  
+    <van-card
+    num="{{item.num}}"
+    tag="标签"
+    price="{{item.price}}"
+    desc="描述信息"
+    title="{{item.title}}"
+    thumb="{{item.imageURL}}"
+>
+    <view slot="footer">
+        <van-button size="mini" bindtap="numCut">-</van-button>
+        <van-button size="mini" bindtap="numAdd">+</van-button>
+    </view>
+</van-card>
+</view>
+
+<van-submit-bar
+  price="{{ 3050 }}"
+  button-text="确定"
+  bind:submit="onSubmit"
+/>

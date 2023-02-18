@@ -1,48 +1,32 @@
 // pages/oneclick/index.js
 Page({
     data: {
-        showtime: false,
-        showdate:false,
-        
-        CDate: '',
-        CTime: '',
-
+        //配送时间array
+        multiArray:[[ new Date().getDate() + "日（今天）",new Date().getDate()+1 + "日（明天）",new Date().getDate()+2 + "日（后天）"],["尽快送达","8:00","8:30","9:00","9:30","10:00","10:30","11:00","11:30","12:00","12:30","13:00","13:30","14:00","14:30","15:00","15:30","16:00","16:30","17:00","17:30","18:00","18:30","19:00","19:30","10:00","20:00","21:30","22:00"]],
+        //其它初始数据
         bzvalue:'',
         zfinfo:'',
-        hongbao:5
+        hongbao:0.5
 
     },
-    
-    showPopupDate(){
-        this.setData({ showdate: true });
-    },
-    showPopupTime(){
-        this.setData({ showtime: true });
-    },  
-    onClose() {
-        this.setData({ showdate: false, showtime:false });
-    },
-    formatDate(date) {
-        date = new Date(date);
-        return `${date.getMonth() + 1}/${date.getDate()}`;
-      },
-      onInputdate(event) {
+    //选择配送时间 确定
+    bindMultiPickerChange: function (e) {
+        console.log('picker发送选择改变，携带值为', e.detail.value);
         this.setData({
-          showdate: false,
-          CDate: this.formatDate(event.detail),
-        });
+          multiIndex: e.detail.value,
+        })
       },
-    onInputtime(event) {
-        this.setData({
-          showtime:false,
-          CTime: event.detail,
-        });
-    },
+    //备注内容改变
     bzonChange(event) {
         // event.detail 为当前输入的值
         this.setData({bzvalue:event.detail});
-        console.log(event.detail);
-      },
+    },
+    //使用红包
+    useHongbao(){
+        this.setData({
+            zfinfo:'use hongbao'
+        })
+    },
     /**
 
     /**
@@ -73,7 +57,7 @@ Page({
             }
           } catch (e) {
             // Do something when catch error
-          };
+        };
     },
 
     /**
@@ -109,5 +93,5 @@ Page({
      */
     onShareAppMessage() {
 
-    }
+    },
 })
