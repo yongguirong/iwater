@@ -1,23 +1,26 @@
 <!--pages/goods/index.wxml-->
-
-<view wx:for="{{goods}}" wx:key="index">  
-    <van-card
-    num="{{item.num}}"
-    tag="标签"
-    price="{{item.price}}"
-    desc="描述信息"
-    title="{{item.title}}"
-    thumb="{{item.imageURL}}"
->
-    <view slot="footer">
-        <van-button size="mini" bindtap="numCut">-</van-button>
-        <van-button size="mini" bindtap="numAdd">+</van-button>
+<van-sidebar active-key="{{ activeKey }}" bind:change="onChange">
+  <van-sidebar-item title="标签名" />
+  <van-sidebar-item title="标签名" />
+  <van-sidebar-item title="标签名" />
+</van-sidebar>
+<view class="goods-list">
+    <view wx:for="{{goods}}" wx:key="index">  
+        <van-card
+        tag="标签"
+        price="{{item.price}}"
+        desc="描述信息"
+        title="{{item.title}}"
+        thumb="{{item.imageURL}}"
+        >
+            <view slot="bottom">
+                <van-stepper class="stepper-slot" min="0" value="{{0}}"  bind:plus="plus" bind:minus="minus" />
+            </view>
+        </van-card>
     </view>
-</van-card>
 </view>
-
 <van-submit-bar
-  price="{{ 3050 }}"
-  button-text="确定"
-  bind:submit="onSubmit"
-/>
+    price="{{ totalPrice*100 }}"
+    button-text="确定"
+    bind:submit="onSubmit"
+/>  

@@ -1,1 +1,12 @@
 /* pages/goods/index.wxss */
+.goods-list{
+    position:absolute;
+    top:20rpx;
+    right: 0rpx;
+    width: 600rpx;
+}
+.stepper-slot {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
