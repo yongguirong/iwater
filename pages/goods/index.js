@@ -38,9 +38,12 @@ Page({
     //数量改变
     // 减去商品
     minus(event){
-        var items = this.data.items  //获取购物车列表
+        var items = this.data.items;  //获取购物车列表
+        console.log(items);
         var index = event.currentTarget.dataset.index;//获取当前点击事件的下标索引
+        console.log(index);
         var number = items[index].number; //获取购物车里面的value值
+        console.log(number);
         number--;
         items[index].number=number;
         console.log("number",number);
@@ -48,7 +51,7 @@ Page({
             items: items
         });
         this.getTotalPrice();                               // 重新获取总价
-        },
+    },
          // 加
         plus(e){
             var items = this.data.items;  //获取购物车列表

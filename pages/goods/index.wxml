@@ -14,7 +14,7 @@
         thumb="{{item.imageURL}}"
         >
             <view slot="bottom">
-                <van-stepper class="stepper-slot" min="0" value="{{0}}"  bind:plus="plus" bind:minus="minus" />
+                <van-stepper name="numinfo" class="stepper-slot" min="0" value="{{0}}" bind:plus="plus" bind:minus="minus" />
             </view>
         </van-card>
     </view>

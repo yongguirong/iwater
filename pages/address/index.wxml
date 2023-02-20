@@ -1,0 +1,16 @@
+<!--pages/address/index.wxml-->
+<van-cell-group inset>
+  <van-cell 
+    title="地址内容" 
+    value="" 
+    data-value="地址内容"
+    icon="location-o" 
+    size="large"
+    link-type="redirectTo"
+    url="/pages/oneclick/index"
+    bindtap="onTapMe"
+    >
+        <van-icon slot="right-icon" name="add" class="custom-icon" />
+    </van-cell>
+</van-cell-group>
+

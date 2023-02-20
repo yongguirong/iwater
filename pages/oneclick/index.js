@@ -4,6 +4,7 @@ Page({
         //配送时间array
         multiArray:[[ new Date().getDate() + "日（今天）",new Date().getDate()+1 + "日（明天）",new Date().getDate()+2 + "日（后天）"],["尽快送达","8:00","8:30","9:00","9:30","10:00","10:30","11:00","11:30","12:00","12:30","13:00","13:30","14:00","14:30","15:00","15:30","16:00","16:30","17:00","17:30","18:00","18:30","19:00","19:30","10:00","20:00","21:30","22:00"]],
         //其它初始数据
+        choiceaddr:'',
         bzvalue:'',
         zfinfo:'',
         hongbao:0.5
@@ -53,6 +54,18 @@ Page({
               // Do something with return value
               this.setData({
                   zfinfo:value
+              })
+            }
+          } catch (e) {
+            // Do something when catch error
+        };
+        //读取地址信息
+        try {
+            var addr = wx.getStorageSync('choiceaddr')
+            if (addr) {
+              // Do something with return value
+              this.setData({
+                  choiceaddr:addr
               })
             }
           } catch (e) {

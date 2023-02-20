@@ -10,7 +10,7 @@
             </picker>
         </view>
 
-        <van-cell title="地址" is-link value="内容" />
+        <van-cell title="地址" is-link value="{{choiceaddr}}" link-type="navigateTo"  url="/pages/address/index"/>
         <van-cell title="商品" is-link value="{{zfinfo}}" link-type="navigateTo"
   url="/pages/goods/index"/>
         <van-cell-group>
