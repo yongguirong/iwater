@@ -10,7 +10,10 @@
     url="/pages/oneclick/index"
     bindtap="onTapMe"
     >
-        <van-icon slot="right-icon" name="add" class="custom-icon" />
+        <van-icon slot="right-icon" name="minus" size="large" class="custom-icon" bindtap="deladdr" />
     </van-cell>
 </van-cell-group>
 
+<view class="bottom-btn">
+    <van-button type="warning" size="large" bindtap="showMap">+添加地址</van-button>
+</view>
