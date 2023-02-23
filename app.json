@@ -1,13 +1,10 @@
 {
-    "entryPagePath": "pages/address/index",
     "pages": [
         "pages/oneclick/index",
         "pages/ticket/index",
         "pages/order/index",
         "pages/my/index",
-        "pages/goods/index",
-        "pages/address/index"
-
+        "pages/goods/index"
     ],
     "tabBar": {
         "list": [

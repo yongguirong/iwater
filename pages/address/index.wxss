@@ -1,6 +1,0 @@
-/* pages/address/index.wxss */
-.bottom-btn{
-    position: absolute;
-    bottom: 100rpx;
-    width: 100%;
-}

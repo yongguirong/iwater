@@ -10,8 +10,8 @@
             </picker>
         </view>
 
-        <van-cell title="地址" is-link value="{{choiceaddr}}" link-type="navigateTo"  url="/pages/address/index"/>
-        <van-cell title="商品" is-link value="{{zfinfo}}" link-type="navigateTo"
+        <van-cell title="地址" value="{{addrinfo.address}}" bindtap="showMap"/>
+        <van-cell title="商品" is-link value="{{goods}}" link-type="navigateTo"
   url="/pages/goods/index"/>
         <van-cell-group>
             <van-field  value="{{ bzvalue }}" label="备注" placeholder="如有特殊需要在此填写" border="{{ false }} "bind:change="bzonChange" />
