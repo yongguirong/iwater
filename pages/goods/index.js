@@ -6,6 +6,7 @@ Page({
     data: {
         activeKey: 0,
         totalPrice:0,
+        category:['桶装水','饮水配件','其它'],
         cart:[],
         goods:[
             {id:'0',title:'商品1',price:5.0,imageURL:'https://img01.yzcdn.cn/vant/ipad.jpeg'},

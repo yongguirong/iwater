@@ -1,8 +1,8 @@
 <!--pages/goods/index.wxml-->
 <van-sidebar active-key="{{ activeKey }}" bind:change="onChange">
-  <van-sidebar-item title="标签名" />
-  <van-sidebar-item title="标签名" />
-  <van-sidebar-item title="标签名" />
+    <view wx:for="{{category}}" wx:key="index">
+        <van-sidebar-item title="{{item}}" />
+    </view>
 </van-sidebar>
 <view class="goods-list">
     <view wx:for="{{goods}}" wx:key="index">  
@@ -23,4 +23,5 @@
     price="{{ totalPrice*100 }}"
     button-text="确定"
     bind:submit="onSubmit"
-/>  
+>  
+</van-submit-bar>
