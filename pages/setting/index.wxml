@@ -1,0 +1,56 @@
+<!--pages/setting/index.wxml-->
+<view class="setting-page">
+    <van-cell wx:for="{{popupbox}}" wx:key="index" title="{{item.title}}" icon="records" size="large" is-link show="{{item.show}}" data-index="{{index}}" bind:click="showPopup" />    
+</view>
+
+<van-popup show="{{ popupbox[0].show }}" data-index="0" bind:close="onClose" closeable >
+    <view class="popup-page">
+        <view class="title">{{popupbox[0].title}}</view>
+        <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" />
+    </view>    
+</van-popup>
+
+<van-popup show="{{ popupbox[1].show }}" data-index="1" bind:close="onClose" closeable >
+    <view class="popup-page">
+        <view class="title">{{popupbox[1].title}}</view>
+        <van-cell-group>
+            <van-field
+                label="昵称："
+                value="{{ userinfo.nickname }}"
+                placeholder="请输入昵称"
+                bind:change="onChange"
+                use-button-slot
+            >
+                <van-button slot="button" size="small" type="primary" data-index="{{1}}" bindtap="onConfirm">确定</van-button>
+            </van-field>
+        </van-cell-group>
+
+    </view>    
+</van-popup>
+
+<van-popup show="{{ popupbox[2].show }}" data-index="2" bind:close="onClose" closeable >
+    <view class="popup-page">
+        <view class="title">{{popupbox[2].title}}</view>
+        <van-cell-group>
+            <van-field
+                value="{{ nickname }}"
+                placeholder="请输入昵称"
+                bind:change="onChange"
+            />
+        </van-cell-group>
+    </view>    
+</van-popup>
+
+<van-popup show="{{ popupbox[3].show }}" data-index="3" bind:close="onClose" closeable >
+    <view class="popup-page">
+        <view class="title">{{popupbox[3].title}}</view>
+        <van-cell-group>
+            <van-field
+                value="{{ nickname }}"
+                placeholder="请输入昵称"
+                bind:change="onChange"
+            />
+        </van-cell-group>
+    </view>    
+</van-popup>
+

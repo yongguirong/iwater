@@ -1,1 +1,31 @@
 /* pages/my/index.wxss */
+.user-info{
+    display: flex;
+    background-color: #1B9DE2;
+    color: #fff;
+    height: 280rpx;
+    width: 100%;
+    padding-top: 40rpx;
+}
+.user-x{
+    flex-direction:row;
+}
+.main-box{
+    background-color: rgb(216, 212, 212);
+    height: 920rpx;
+    width: 100%;
+    padding-top: 100rpx;
+    margin-top: 30rpx;
+}
+.center-box{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background: #fff;
+    top:280rpx;
+    left: 3%;
+    height: 100rpx;
+    width: 85%;
+    padding: 30rpx;
+    border-radius: 100rpx;
+}

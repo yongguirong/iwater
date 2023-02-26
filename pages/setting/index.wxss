@@ -1,0 +1,19 @@
+/* pages/setting/index.wxss */
+.setting-page{
+    padding: 50rpx;
+}
+.popup-page{
+    padding: 0,50rpx;
+    width: 600rpx;
+    height: 100%;
+}
+.popup-page .title{
+    background-color: darkgrey;
+    padding: 20rpx;
+    font-size: large;
+
+}
+.popup-page button{
+    margin: 30rpx;
+    width: 200rpx;
+}

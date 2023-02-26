@@ -7,7 +7,17 @@ Page({
     data: {
 
     },
-
+    //打电话
+    makePhoneCall(){
+        wx.makePhoneCall({
+            phoneNumber: '13083389118' //仅为示例，并非真实的电话号码
+          })
+    },
+    onTapSetting(){
+        wx.navigateTo({
+          url: '/pages/setting/index',
+        })
+    },
     /**
      * 生命周期函数--监听页面加载
      */
