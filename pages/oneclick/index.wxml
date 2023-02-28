@@ -11,15 +11,15 @@
                 />
             </picker>
         </view>
-        <van-cell icon="location-o" title="地址" value="{{addrinfo.name + addrinfo.address}}" bindtap="showMap"/>
+        <van-cell icon="location-o" title="地址" value="{{userinfo.addrlist[0].address}}" bindtap="showMap"/>
         <van-cell icon="cart-o" title="商品" is-link value="{{goods}}" link-type="navigateTo" url="/pages/goods/index"/>
         <van-cell-group>
-            <van-field  value="{{ phone }}" label="手机" placeholder="请输入手机号" bind:change="phoneonChange"/>
+            <van-field  value="{{ userinfo.phone }}" label="手机" placeholder="请输入手机号" bind:change="phoneonChange"/>
             <van-field  value="{{ bzvalue }}" label="备注/详址" placeholder="其它补充（如地址补充）" bind:change="bzonChange" />
         </van-cell-group>
         <van-button round size="large" type="info" bindtap="onzhifu">{{zfinfo}}</van-button>
-        <van-button round size="large" type="danger" wx:if="{{hongbao>0}}" bindtap="useHongbao">使用红包</van-button>
+        <van-button round size="large" type="danger" wx:if="{{userinfo.financedata.hongbao>0}}" bindtap="useHongbao">使用红包</van-button>
     </view>
-    <view class="notice-text">        放假通知:  01月21日-01月27日，放假期间不送水  </view>
-    <view>政企订水点下方水票：0558-5587791</view>
+    <view class="notice-text">{{qiyeinfo.notice}}</view>
+    <view>政企订水点下方水票：{{userinfo.phone}}</view>
 </view>

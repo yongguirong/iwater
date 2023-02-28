@@ -1,22 +1,45 @@
 // pages/oneclick/index.js
 const chooseLocation = requirePlugin('chooseLocation');
+//获得APP实例
+const app = getApp();
+
+/* date 代表指定的日期，格式：2018-09-27
+// day 传-1表始前一天，传1表始后一天
+// JS获取指定日期的前一天，后一天
+function getNextDate(date, day) { 
+    　　var dd = new Date(date);
+    　　dd.setDate(dd.getDate() + day);
+    　　var y = dd.getFullYear();
+    　　var m = dd.getMonth() + 1 < 10 ? "0" + (dd.getMonth() + 1) : dd.getMonth() + 1;
+    　　var d = dd.getDate() < 10 ? "0" + dd.getDate() : dd.getDate();
+    　　return y + "-" + m + "-" + d;
+    };
+例如：getNextDate("2018-09-27",-1);
+运行结果: 2018-09-26
+*/
+function getNextDate(day) { 
+    　　var dd = new Date();
+    　　dd.setDate(dd.getDate() + day);
+    　　var y = dd.getFullYear();
+    　　var m = dd.getMonth() + 1 < 10 ? "0" + (dd.getMonth() + 1) : dd.getMonth() + 1;
+    　　var d = dd.getDate() < 10 ? "0" + dd.getDate() : dd.getDate();
+    　　return new Date(y + "-" + m + "-" + d);
+    };
 Page({
     data: {
         //配送时间array
-        multiArray:[[ new Date().getDate() + "日（今天）",new Date().getDate()+1 + "日（明天）",new Date().getDate()+2 + "日（后天）",new Date().getDate()+3 + "日",new Date().getDate()+4 + "日"],["尽快送达","8:00","8:30","9:00","9:30","10:00","10:30","11:00","11:30","12:00","12:30","13:00","13:30","14:00","14:30","15:00","15:30","16:00","16:30","17:00","17:30","18:00","18:30","19:00","19:30","10:00","20:00","21:30","22:00"]],
+        multiArray:[[ new Date().getDate() + "日（今天）", getNextDate(1).getDate()+ "日（明天）",getNextDate(2).getDate() + "日（后天）",getNextDate(3).getDate() + "日",getNextDate(4).getDate() + "日"],["尽快送达","8:00","8:30","9:00","9:30","10:00","10:30","11:00","11:30","12:00","12:30","13:00","13:30","14:00","14:30","15:00","15:30","16:00","16:30","17:00","17:30","18:00","18:30","19:00","19:30","10:00","20:00","21:30","22:00"]],
         //其它初始数据
         multiIndex:[],
         peishongtime:'',
-        addrinfo:{},
+        qiyeinfo:app.globalData.qiyeinfo,
         goods:[
             {id:'0',title:'商品1',price:5.0,imageURL:'https://img01.yzcdn.cn/vant/ipad.jpeg'},
             {id:'1',title:'商品2',price:15.0,imageURL:'https://img01.yzcdn.cn/vant/ipad.jpeg'}
         ],
-        phone:'19965960978',
+        userinfo:app.globalData.userinfo,
         bzinfo:'',
-        zfinfo:'',
-        hongbao:0.5
-
+        zfinfo:''
     },
     //选择配送时间 确定
     bindMultiPickerChange: function (e) {
@@ -92,10 +115,12 @@ Page({
         // 如果点击确认选点按钮，则返回选点结果对象，否则返回null
         var location = chooseLocation.getLocation();
         if(location){
+            app.globalData.userinfo.addrlist = [location,... app.globalData.userinfo.addrlist];
+           
             this.setData({
-                addrinfo:location
+                userinfo:app.globalData.userinfo
             });
-            console.log('地址信息：', this.data.addrinfo);
+            console.log('地址信息：', app.globalData.userinfo.addrlist);
         };
     },
 

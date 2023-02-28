@@ -1,16 +1,19 @@
 // pages/my/index.js
+//获得APP实例
+var app = getApp();
+// var userinfo = app.globalData.userinfo;
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
+        userinfo:app.globalData.userinfo
     },
     //打电话
     makePhoneCall(){
         wx.makePhoneCall({
-            phoneNumber: '13083389118' //仅为示例，并非真实的电话号码
+            phoneNumber: userinfo.phone//仅为示例，并非真实的电话号码
           })
     },
     onTapSetting(){
@@ -36,7 +39,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow() {
-
+        
     },
 
     /**

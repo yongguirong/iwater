@@ -1,4 +1,6 @@
 // pages/setting/index.js
+//获得APP实例
+const app = getApp();
 Page({
     /**
      * 页面的初始数据

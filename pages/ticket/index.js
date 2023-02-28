@@ -1,4 +1,6 @@
 // pages/ticket/index.js
+//获得APP实例
+const app = getApp();
 Page({
 
     /**

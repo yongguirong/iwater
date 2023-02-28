@@ -9,10 +9,12 @@
 }
 .user-x{
     flex-direction:row;
+    line-height:120rpx;
+    padding: 20rpx;
 }
 .main-box{
     background-color: rgb(216, 212, 212);
-    height: 920rpx;
+    height: 875rpx;
     width: 100%;
     padding-top: 100rpx;
     margin-top: 30rpx;

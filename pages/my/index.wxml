@@ -1,8 +1,8 @@
 <!--pages/my/index.wxml-->
 <view class="user-info">
     <view class="user-info user-x">
-        <view><van-image round width="120rpx" height="120rpx"  src="https://img.yzcdn.cn/vant/cat.jpeg" /></view>
-        <view><text>{{userinfo.nickname}}微信用户19965960978</text></view>
+        <view><van-image round width="120rpx" height="120rpx"  src="{{userinfo.pic}}" /></view>
+        <view><text style="padding-left:20rpx;">{{userinfo.nickname}}</text></view>
     </view>
     <view class="user-info user-x">
         <view>
@@ -20,13 +20,13 @@
             icon="coupon-o"
             link-type="navigateTo"
             url="/pages/ticket/index"
-            text="水票（0）"
+            text="水票（{{userinfo.financedata.shuipiao}}）"
         />
         <van-grid-item
             icon="gold-coin-o"
             link-type="navigateTo"
             url="/pages/yajing/index"
-            text="桶押金0元"
+            text="桶押金{{userinfo.financedata.yajing}}元"
         />
         <van-grid-item
             icon="shop-o"
@@ -46,13 +46,13 @@
     <van-cell  icon="gem-o" is-link  title="我的礼品"  link-type="navigateTo"  url="/pages/dashboard/index" />
     <van-cell  icon="gold-coin-o" is-link  title="返佣记录"  link-type="navigateTo"  url="/pages/dashboard/index" />
     <van-cell  icon="question-o" is-link  title="使用帮助"  link-type="navigateTo"  url="/pages/dashboard/index" />
-    <van-cell  icon="phone-o" is-link  title="联系客服0773-2354345"  bindtap="makePhoneCall" />
+    <van-cell  icon="phone-o" is-link  title="联系客服{{userinfo.phone}}"  bindtap="makePhoneCall" />
 </view>
 <view class="center-box">
     <van-grid direction="horizontal" column-num="3">
-        <van-grid-item icon="points" text="积分10" />
-        <van-grid-item icon="cash-o" text="红包0.5" />
-        <van-grid-item icon="balance-o" text="佣金0.10" />
+        <van-grid-item icon="points" text="积分{{userinfo.financedata.jifeng}}" />
+        <van-grid-item icon="cash-o" text="红包{{userinfo.financedata.hongbao}}" />
+        <van-grid-item icon="balance-o" text="佣金{{userinfo.financedata.yongjing}}" />
     </van-grid>
 </view>
 
