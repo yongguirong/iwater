@@ -5,10 +5,10 @@
         <view><text style="padding-left:20rpx;">{{userinfo.nickname}}</text></view>
     </view>
     <view class="user-info user-x">
-        <view>
+        <view style="width: 205rpx;">
             <van-button  type="warning">签到领积分</van-button>
         </view>
-        <view>
+        <view style="width: 170rpx;">
             <van-button icon="setting-o" type="info" bind:click="onTapSetting">设置</van-button>
         </view>
     </view>

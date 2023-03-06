@@ -1,0 +1,15 @@
+<!--pages/template/template.wxml-->
+<template name="topTips">
+  <view class="topTips">
+    <text> {{tips}}</text>
+    <navigator url="{{navToPage}}" >{{navText}}</navigator>
+  </view>
+</template>
+<template class="topItem" name="topItem">
+    <van-tabs active="{{ active }}" bind:change="onChange">
+        <view  wx:for="{{item}}" wx:key="index" >
+            <van-tab title="{{item.title}}">{{item.content}}</van-tab>
+        </view>
+    </van-tabs>
+
+</template>

@@ -5,7 +5,8 @@
         "pages/setting/index",
         "pages/ticket/index",
         "pages/order/index",
-        "pages/goods/index"
+        "pages/goods/index",
+        "pages/template/template"
     ],
     "tabBar": {
         "list": [
@@ -57,7 +58,9 @@
         "van-grid": "@vant/weapp/grid/index",
         "van-grid-item": "@vant/weapp/grid-item/index",
         "van-dialog": "@vant/weapp/dialog/index",
-        "van-uploader": "@vant/weapp/uploader/index"
+        "van-uploader": "@vant/weapp/uploader/index",
+        "van-tab": "@vant/weapp/tab/index",
+        "van-tabs": "@vant/weapp/tabs/index"
     },
     "plugins": {
         "chooseLocation": {

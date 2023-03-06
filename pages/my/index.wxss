@@ -14,7 +14,7 @@
 }
 .main-box{
     background-color: rgb(216, 212, 212);
-    height: 875rpx;
+    height: 660rpx;
     width: 100%;
     padding-top: 100rpx;
     margin-top: 30rpx;

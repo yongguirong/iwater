@@ -1,16 +1,14 @@
 /* pages/oneclick/index.wxss */
 .mainbox{
     width: 580rpx;
-    padding: 50rpx;
+    padding: 20rpx 50rpx;
     background-color: #fff;
     border-radius: 20rpx;
     display: flex;
     flex-direction: column;
     color: cadetblue;
-    margin: 50rpx;
-
 }
-
 .notice-text{
+    padding: 0rpx 30rpx;
     font-weight: bold;
 }

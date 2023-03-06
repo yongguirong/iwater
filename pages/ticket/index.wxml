@@ -1,5 +1,8 @@
 <!--pages/ticket/index.wxml-->
-<view class="container">
-    <text>pages/ticket/index.wxml</text>
-</view>
+<!-- 声明需要使用的模板文件 -->
+<import src ="/pages/template/template.wxml"/>
+<text>pages/ticket/index.wxml</text>
+<template is="topTips" data="{{...tips}}" />
+<template is="topItem" data="{{item}}"></template>
+
 
