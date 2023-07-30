@@ -1,8 +1,8 @@
 <!--pages/template/template.wxml-->
 <template name="topTips">
   <view class="topTips">
-    <text> {{tips}}</text>
-    <navigator url="{{navToPage}}" >{{navText}}</navigator>
+    <text> {{topTips.tips}}</text>
+    <navigator url="{{topTips.navToPage}}" >{{topTips.navText}}</navigator>
   </view>
 </template>
 <template class="topItem" name="topItem">

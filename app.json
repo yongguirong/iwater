@@ -6,7 +6,8 @@
         "pages/ticket/index",
         "pages/order/index",
         "pages/goods/index",
-        "pages/template/template"
+        "pages/template/template",
+        "pages/cart/cart"
     ],
     "tabBar": {
         "list": [
@@ -60,7 +61,10 @@
         "van-dialog": "@vant/weapp/dialog/index",
         "van-uploader": "@vant/weapp/uploader/index",
         "van-tab": "@vant/weapp/tab/index",
-        "van-tabs": "@vant/weapp/tabs/index"
+        "van-tabs": "@vant/weapp/tabs/index",
+        "van-goods-action": "@vant/weapp/goods-action/index",
+        "van-goods-action-icon": "@vant/weapp/goods-action-icon/index",
+        "van-goods-action-button": "@vant/weapp/goods-action-button/index"
     },
     "plugins": {
         "chooseLocation": {

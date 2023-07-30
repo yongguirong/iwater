@@ -13,7 +13,36 @@ App({
                 {name: "谯城区人民政府", latitude: 33.87641, longitude: 115.77914, address: "安徽省亳州市谯城区薛阁办事处半截楼3号", province: "安徽省",city: "亳州市",district: "谯城区"}
             ]
         },
-        goodlist:[],
+        goodslist:{
+            category:[
+                {
+                    id:'1',
+                    categoryName:'桶装水',
+                    goodsitem:[
+                        {id:'10',title:'商品1',price:5.0,imageURL:'https://img01.yzcdn.cn/vant/ipad.jpeg'},
+                        {id:'11',title:'商品2',price:15.0,imageURL:'https://img01.yzcdn.cn/vant/ipad.jpeg'},
+                        {id:'12',title:'商品3',price:25.0,imageURL:'https://img01.yzcdn.cn/vant/ipad.jpeg'}
+                    ]
+                },
+                {
+                    id:'2',
+                    categoryName:'饮水配件',
+                    goodsitem:[
+                        {id:'20',title:'商品4',price:5.0,imageURL:'https://img01.yzcdn.cn/vant/ipad.jpeg'},
+                        {id:'21',title:'商品5',price:15.0,imageURL:'https://img01.yzcdn.cn/vant/ipad.jpeg'}
+                    ]
+                },
+                {
+                    id:'3',
+                    categoryName:'其它',
+                    goodsitem:[
+                        {id:'30',title:'商品6',price:35.0,imageURL:'https://img01.yzcdn.cn/vant/ipad.jpeg'},
+                        {id:'31',title:'商品7',price:515.0,imageURL:'https://img01.yzcdn.cn/vant/ipad.jpeg'},
+                        {id:'32',title:'商品8',price:765.0,imageURL:'https://img01.yzcdn.cn/vant/ipad.jpeg'}
+                    ]
+                }
+            ]
+        },
         cartinfo:{}
     },
 

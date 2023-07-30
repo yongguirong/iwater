@@ -1,50 +1,34 @@
 // pages/goods/index.js
+//购物车功能 参考 https://www.lsjlt.com/news/70382.html
 //获得APP实例
+
 const app = getApp();
+var goodslist=app.globalData.goodslist;
+
 Page({
     /**
      * 页面的初始数据
      */
     data: {
-        activeKey: 0,
-        totalPrice:0,
-        category:['桶装水','饮水配件','其它'],
-        cart:[],
-        goods:[
-            {id:'0',title:'商品1',price:5.0,imageURL:'https://img01.yzcdn.cn/vant/ipad.jpeg'},
-            {id:'1',title:'商品2',price:15.0,imageURL:'https://img01.yzcdn.cn/vant/ipad.jpeg'}
-        ]
+        goodslist:goodslist,
+        currentCate:1
+
     },
-    //标签点击，到后台获取相应分类商品列表，并设置GOODS
+    //标签点击，到后台获取相应分类商品列表
     onChange(event) {
-        if(event.detail==0){
-            this.setData({
-                goods:[
-                    {id:'0',title:'商品1',price:5.0,imageURL:'https://img01.yzcdn.cn/vant/ipad.jpeg'},
-                    {id:'1',title:'商品2',price:15.0,imageURL:'https://img01.yzcdn.cn/vant/ipad.jpeg'}
-                ]
-            })
-        };
-        if(event.detail==1){
-            this.setData({
-                goods:[
-                    {id:'0',title:'商品3',price:5.0,imageURL:'https://img01.yzcdn.cn/vant/ipad.jpeg'},
-                    {id:'1',title:'商品4',price:15.0,imageURL:'https://img01.yzcdn.cn/vant/ipad.jpeg'}
-                ]
-            })
-        }
-      },
-    //数量改变
-    numchange(event){
-        var index = event.currentTarget.dataset.index;//获取当前点击事件的下标索引
-        var number = cart[index].number;  //获取购物车里面的value值
-        number++;
-        this.data.cart[index].number = number;
-        this.data.cart[index].price = goods[index].price
         this.setData({
-            cart: this.data.cart
-        });
-        this.getTotalPrice();                               // 重新获取总价
+            currentCate:event.detail
+        })
+      },
+    //添加到购物车
+    addtocart(e){
+        console.log(e.currentTarget.dataset.id)
+    },
+    //查看购物车
+    onShowCart(){
+        wx.navigateTo({
+          url: '/pages/cart/cart',
+        })
     },
     // 总价
     getTotalPrice() {
@@ -87,7 +71,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow() {
-
+        console.log(this.data.goodslist)
     },
 
     /**
